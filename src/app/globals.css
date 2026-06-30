@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+ * Restaurant Master Template — theme layer.
+ * The actual color VALUES are injected from restaurant.config.ts via a <style>
+ * tag in the root layout (see lib/theme.ts). Here we map them to Tailwind
+ * utilities so `bg-background`, `text-primary`, `font-display`, etc. all work
+ * and re-theme automatically when the config changes.
+ *
+ * Fallback values below keep things sane before the injected style applies.
+ */
+
+:root {
+  --background: #0c0a09;
+  --surface: #15110d;
+  --foreground: #f4ede1;
+  --muted: #a99c88;
+  --primary: #c9a25f;
+  --on-primary: #1a1206;
+  --accent: #c9a25f;
+  --border: rgba(244, 237, 225, 0.12);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --radius-base: var(--radius);
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Refined letter-spaced label used for eyebrows. */
+  .tracking-luxe {
+    letter-spacing: 0.28em;
+  }
+
+  /* Hairline gold divider. */
+  .rule-gold {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary),
+      transparent
+    );
+  }
+}
