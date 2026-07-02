@@ -79,9 +79,14 @@ export function Footer() {
           <p>
             © {year} {brand.name}. All rights reserved.
           </p>
-          <p className="uppercase tracking-[0.15em]">
-            Crafted by Daric
-          </p>
+          <a
+            href="https://arian200825.github.io/daric-agency/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase tracking-[0.15em] text-primary transition-opacity hover:opacity-80"
+          >
+            Built by Daric →
+          </a>
         </div>
       </div>
     </footer>
