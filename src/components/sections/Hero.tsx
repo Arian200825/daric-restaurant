@@ -26,13 +26,18 @@ export function Hero() {
       <Media
         src={hero.backgroundImage}
         alt=""
-        gradient={["#2a1f14", "#0c0a09"]}
+        gradient={["#2a1c10", "#0c0a08"]}
         eager
         className="absolute inset-0 -z-10"
       />
       {/* Legibility overlay */}
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/40 to-background"
+        aria-hidden
+      />
+      {/* Candlelight — a warm glow rising from below */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-[radial-gradient(ellipse_at_bottom,rgba(204,163,95,0.16),transparent_70%)]"
         aria-hidden
       />
 

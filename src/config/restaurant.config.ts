@@ -65,16 +65,18 @@ export const config: RestaurantConfig = {
     advanceDays: 60,
   },
 
+  // Warm fine-dining identity: deep charcoal, rich walnut brown, champagne
+  // gold, warm cream — candlelit and intimate (see brand brief).
   theme: {
     colors: {
-      background: "#0c0a09",
-      surface: "#15110d",
-      foreground: "#f4ede1",
-      muted: "#a99c88",
-      primary: "#c9a25f",
+      background: "#0c0a08", // deep charcoal
+      surface: "#1e1610", // rich walnut brown
+      foreground: "#f5efe4", // warm cream
+      muted: "#b3a48b", // warm taupe
+      primary: "#cca35f", // champagne gold
       onPrimary: "#1a1206",
-      accent: "#c9a25f",
-      border: "rgba(244, 237, 225, 0.12)",
+      accent: "#cca35f",
+      border: "rgba(216, 196, 160, 0.14)", // warm gold-cream hairline
     },
     radius: 0.5,
     fonts: { display: "cormorant", body: "jost" },
