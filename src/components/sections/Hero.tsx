@@ -54,9 +54,20 @@ export function Hero() {
           {l(hero.eyebrow)}
         </motion.span>
 
+        {/* Fine-dining ornament — gold hairlines with a center diamond */}
+        <motion.div
+          variants={staggerItem}
+          className="mt-6 flex items-center gap-3"
+          aria-hidden
+        >
+          <span className="h-px w-12 bg-gradient-to-r from-transparent to-primary/70" />
+          <span className="h-1.5 w-1.5 rotate-45 bg-primary" />
+          <span className="h-px w-12 bg-gradient-to-l from-transparent to-primary/70" />
+        </motion.div>
+
         <motion.h1
           variants={staggerItem}
-          className="mt-6 text-balance text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
+          className="mt-6 text-balance font-display text-5xl italic leading-[1.05] sm:text-6xl lg:text-7xl"
         >
           {l(hero.headline)}
         </motion.h1>

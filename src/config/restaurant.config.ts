@@ -78,7 +78,7 @@ export const config: RestaurantConfig = {
       accent: "#cca35f",
       border: "rgba(216, 196, 160, 0.14)", // warm gold-cream hairline
     },
-    radius: 0.5,
+    radius: 0, // sharp, rectangular — editorial / printed-menu elegance
     fonts: { display: "cormorant", body: "jost" },
   },
 
