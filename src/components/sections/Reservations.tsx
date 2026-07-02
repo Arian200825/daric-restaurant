@@ -51,7 +51,7 @@ function ReservationForm() {
         await fetch(config.reservations.endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ ...data, source: "restaurant" }),
         });
       } catch {
         /* fall through to success UI; wire real error handling per client */
