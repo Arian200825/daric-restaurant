@@ -7,7 +7,8 @@ import { useI18n } from "@/lib/i18n";
 export function Footer() {
   const { l, t } = useI18n();
   const { brand, contact, hours, socials } = config;
-  const year = "2025"; // build-time constant
+  const year = "2026"; // build-time constant
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <footer className="border-t border-border bg-surface">
@@ -75,18 +76,26 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-muted sm:flex-row sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-muted sm:flex-row sm:px-8">
           <p>
             © {year} {brand.name}. All rights reserved.
           </p>
-          <a
-            href="https://arian200825.github.io/daric-agency/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="uppercase tracking-[0.15em] text-primary transition-opacity hover:opacity-80"
-          >
-            Built by Daric →
-          </a>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 uppercase tracking-[0.15em]">
+            <a href={`${base}/privacy/`} className="transition-colors hover:text-primary">
+              Privacy
+            </a>
+            <a href={`${base}/terms/`} className="transition-colors hover:text-primary">
+              Terms
+            </a>
+            <a
+              href="https://arian200825.github.io/daric-agency/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary transition-opacity hover:opacity-80"
+            >
+              Built by Daric →
+            </a>
+          </div>
         </div>
       </div>
     </footer>
