@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://arian200825.github.io/daric-restaurant/sitemap.xml
